@@ -60,7 +60,7 @@
     const onMeetingSite = tab && MEETING_URL.test(tab.url || '');
     if (!state) {
       box.append(h('div', { class: 'empty' }, onMeetingSite
-        ? 'EdgeTranscript is not active in this tab yet. Reload the meeting page (it was open before the extension was installed or updated).'
+        ? 'ET is not active in this tab yet. Reload the meeting page (it was open before the extension was installed or updated).'
         : 'Open a Google Meet, Microsoft Teams or Zoom web call. Recording starts automatically once you join and captions are on.'));
       return;
     }

@@ -28,7 +28,7 @@
     id: 'teams',
     name: 'Microsoft Teams',
     selectors: SELECTORS,
-    captionHint: 'Turn on live captions (More … → Language and speech → Show live captions) so EdgeTranscript can record the transcript.',
+    captionHint: 'Turn on live captions (More … → Language and speech → Show live captions) so ET can record the transcript.',
 
     matches(loc) {
       return /(^|\.)teams\.(microsoft\.com|live\.com|cloud\.microsoft)$/i.test(loc.hostname);

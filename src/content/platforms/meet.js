@@ -57,7 +57,7 @@
     id: 'meet',
     name: 'Google Meet',
     selectors: SELECTORS,
-    captionHint: 'Turn on captions (CC button or press "c") so EdgeTranscript can record the transcript.',
+    captionHint: 'Turn on captions (CC button or press "c") so ET can record the transcript.',
 
     matches(loc) {
       return loc.hostname === 'meet.google.com';

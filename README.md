@@ -1,4 +1,4 @@
-# EdgeTranscript
+# ET — Edge Transcript
 
 Browser extension (Edge / Chrome, Manifest V3) that saves transcripts of **Google Meet**, **Microsoft Teams** and **Zoom** web calls by reading the meeting's own live captions. No audio is recorded, nothing is sent anywhere — transcripts are stored in the browser's local extension storage.
 
@@ -20,7 +20,7 @@ After editing code, press **Reload** on the extension card and reload the meetin
    - Teams — `teams.microsoft.com` / `teams.live.com` / `teams.cloud.microsoft` (web, not the desktop app)
    - Zoom — web client `app.zoom.us/wc/...` ("Join from your browser")
 2. Turn on captions:
-   - Meet: CC button or press `c` (EdgeTranscript tries this for you).
+   - Meet: CC button or press `c` (ET tries this for you).
    - Teams: **More … → Language and speech → Show live captions**.
    - Zoom: **Captions → Show captions** (host must allow it). Open **View full transcript** to get speaker names.
 3. The toolbar badge shows **REC** while capturing, **CC** when it is waiting for captions.

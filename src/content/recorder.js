@@ -161,7 +161,7 @@
         try {
           if (this.adapter.enableCaptions(doc)) this.enableAttempts = MAX_ENABLE_ATTEMPTS;
         } catch (e) {
-          console.debug('[EdgeTranscript] enableCaptions failed', e);
+          console.debug('[ET] enableCaptions failed', e);
         }
       }
       if (this.settings.showInPageHint && missingFor >= HINT_AFTER_MS) this.showHint();
@@ -208,7 +208,7 @@
       try {
         blocks = this.adapter.readCaptions(this.observedRoot);
       } catch (e) {
-        console.debug('[EdgeTranscript] readCaptions failed', e);
+        console.debug('[ET] readCaptions failed', e);
         return;
       }
       const snapshot = blocks.map((b) => ({ key: this.keyFor(b.el), speaker: b.speaker, text: b.text }));
@@ -234,7 +234,7 @@
       try {
         await root.ETStorage.saveTranscript(this.transcript);
       } catch (e) {
-        console.debug('[EdgeTranscript] save failed', e);
+        console.debug('[ET] save failed', e);
       }
     }
 
@@ -291,7 +291,7 @@
         </style>
         <div class="box" role="status">
           <span class="dot"></span>
-          <div><b>EdgeTranscript is waiting for captions</b><span class="msg"></span></div>
+          <div><b>ET is waiting for captions</b><span class="msg"></span></div>
           <button aria-label="Dismiss">×</button>
         </div>`;
       shadow.querySelector('.msg').textContent = this.adapter.captionHint;
@@ -317,7 +317,7 @@
       let parsed = null;
       try { parsed = captionRoot ? this.adapter.readCaptions(captionRoot).map((b) => ({ speaker: b.speaker, text: b.text })) : null; } catch (e) { parsed = String(e); }
       return {
-        extension: 'EdgeTranscript',
+        extension: 'ET',
         version: chrome.runtime.getManifest().version,
         platform: this.adapter.id,
         url: root.location.href,

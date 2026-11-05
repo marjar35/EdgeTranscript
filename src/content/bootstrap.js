@@ -59,12 +59,12 @@
     try {
       nowInCall = adapter.isInCall(root.document);
     } catch (e) {
-      console.debug('[EdgeTranscript] isInCall failed', e);
+      console.debug('[ET] isInCall failed', e);
     }
 
-    if (nowInCall && !inCall) console.info(`[EdgeTranscript] ${adapter.name} call detected`);
+    if (nowInCall && !inCall) console.info(`[ET] ${adapter.name} call detected`);
     if (!nowInCall && inCall) {
-      console.info(`[EdgeTranscript] ${adapter.name} call ended`);
+      console.info(`[ET] ${adapter.name} call ended`);
       manualStop = false;
       if (recorder.active) await recorder.stop();
     }
@@ -154,5 +154,5 @@
     tick();
   }
 
-  init().catch((e) => console.warn('[EdgeTranscript] init failed', e));
+  init().catch((e) => console.warn('[ET] init failed', e));
 })(globalThis);
