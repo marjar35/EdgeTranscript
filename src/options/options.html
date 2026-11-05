@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings — EdgeTranscript</title>
+  <link rel="icon" href="../../icons/icon32.png">
+  <link rel="stylesheet" href="../lib/ui.css">
+  <style>
+    main { max-width: 640px; margin: 0 auto; padding: 24px 16px 60px; }
+    h1 { font-size: 20px; display: flex; align-items: center; gap: 10px; margin: 0 0 4px; }
+    h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--fg-2); margin: 28px 0 8px; }
+    .group { border: 1px solid var(--border); border-radius: var(--radius); }
+    .opt { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 14px; }
+    .opt + .opt { border-top: 1px solid var(--border); }
+    .opt .desc { font-size: 12px; color: var(--fg-2); }
+    .opt input[type="number"] { width: 80px; }
+    input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent); }
+    .footer { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1><img src="../../icons/icon32.png" alt="" width="24" height="24"> EdgeTranscript settings</h1>
+    <div class="muted small">Changes are saved automatically. Transcripts never leave this computer.</div>
+
+    <h2>Recording</h2>
+    <div class="group">
+      <label class="opt"><div>Start automatically<div class="desc">Begin recording as soon as you join a call.</div></div>
+        <input type="checkbox" data-key="autoStart"></label>
+      <label class="opt"><div>Turn on captions automatically<div class="desc">Google Meet only — clicks the CC button if captions are off.</div></div>
+        <input type="checkbox" data-key="autoEnableCaptions"></label>
+      <label class="opt"><div>Show reminder when captions are off<div class="desc">Small note in the meeting page, visible only to you.</div></div>
+        <input type="checkbox" data-key="showInPageHint"></label>
+      <label class="opt"><div>Append when rejoining (minutes)<div class="desc">Rejoining the same meeting within this time continues the same transcript. 0 = always start a new one.</div></div>
+        <input type="number" min="0" max="240" data-key="rejoinWindowMinutes"></label>
+    </div>
+
+    <h2>Platforms</h2>
+    <div class="group">
+      <label class="opt"><div>Google Meet<div class="desc">meet.google.com</div></div><input type="checkbox" data-platform="meet"></label>
+      <label class="opt"><div>Microsoft Teams<div class="desc">teams.microsoft.com, teams.live.com, teams.cloud.microsoft</div></div><input type="checkbox" data-platform="teams"></label>
+      <label class="opt"><div>Zoom web client<div class="desc">app.zoom.us/wc — the host must enable captions</div></div><input type="checkbox" data-platform="zoom"></label>
+    </div>
+
+    <h2>Viewing &amp; export</h2>
+    <div class="group">
+      <label class="opt"><div>Merge consecutive lines of the same speaker</div>
+        <input type="checkbox" data-key="mergeSameSpeaker"></label>
+      <label class="opt"><div>Merge if pause is shorter than (seconds)</div>
+        <input type="number" min="0" max="600" data-key="mergeGapSeconds"></label>
+      <label class="opt"><div>Timestamps</div>
+        <select data-key="timestampFormat">
+          <option value="elapsed">Elapsed (00:12:05)</option>
+          <option value="clock">Clock time (14:03:22)</option>
+        </select></label>
+      <label class="opt"><div>Default export format<div class="desc">Used by Download in the popup and bulk export.</div></div>
+        <select data-key="defaultExportFormat">
+          <option value="md">Markdown (.md)</option>
+          <option value="txt">Text (.txt)</option>
+          <option value="json">JSON (.json)</option>
+          <option value="vtt">WebVTT (.vtt)</option>
+        </select></label>
+    </div>
+
+    <div class="footer">
+      <a href="../library/library.html">Open transcripts</a>
+      <button class="danger" id="delete-all">Delete all transcripts…</button>
+    </div>
+  </main>
+
+  <script src="../lib/settings.js"></script>
+  <script src="../lib/transcript-model.js"></script>
+  <script src="../lib/exporters.js"></script>
+  <script src="../lib/storage.js"></script>
+  <script src="../lib/ui.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

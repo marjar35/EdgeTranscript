@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EdgeTranscript harness</title>
+  <style>
+    body { font: 14px system-ui, sans-serif; margin: 20px; }
+    .pass { color: #15803d; } .fail { color: #b91c1c; }
+    pre { background: #f3f4f6; padding: 8px; white-space: pre-wrap; }
+    #stage { position: relative; min-height: 40px; border: 1px dashed #ccc; margin: 10px 0; padding: 6px; }
+  </style>
+  <!--
+    Drives the real content-script code (adapters + CaptionRecorder) against simulated
+    caption DOM for each platform. Open this file in a browser; results appear below.
+  -->
+  <script src="chrome-stub.js"></script>
+  <script src="../../src/lib/settings.js"></script>
+  <script src="../../src/lib/transcript-model.js"></script>
+  <script src="../../src/lib/storage.js"></script>
+  <script src="../../src/content/dom-utils.js"></script>
+  <script src="../../src/content/platforms/meet.js"></script>
+  <script src="../../src/content/platforms/teams.js"></script>
+  <script src="../../src/content/platforms/zoom.js"></script>
+  <script src="../../src/content/recorder.js"></script>
+</head>
+<body>
+  <h1>EdgeTranscript harness</h1>
+  <div id="stage"></div>
+  <div id="out"></div>
+  <script src="harness.js"></script>
+</body>
+</html>

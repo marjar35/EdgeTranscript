@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EdgeTranscript</title>
+  <link rel="stylesheet" href="../lib/ui.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../../icons/icon32.png" alt="" width="20" height="20">
+    <strong>EdgeTranscript</strong>
+    <span class="spacer"></span>
+    <button class="icon" id="open-options" title="Settings" aria-label="Settings">⚙</button>
+  </header>
+
+  <section id="current" class="card"></section>
+
+  <section class="recent">
+    <div class="section-head">
+      <span>Recent transcripts</span>
+      <button class="link" id="open-library">Open all</button>
+    </div>
+    <ul id="recent-list"></ul>
+  </section>
+
+  <script src="../lib/settings.js"></script>
+  <script src="../lib/transcript-model.js"></script>
+  <script src="../lib/exporters.js"></script>
+  <script src="../lib/storage.js"></script>
+  <script src="../lib/ui.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

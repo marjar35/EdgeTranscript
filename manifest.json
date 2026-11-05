@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "EdgeTranscript",
+  "short_name": "EdgeTranscript",
+  "version": "0.1.0",
+  "description": "Save live-caption transcripts from Google Meet, Microsoft Teams and Zoom web calls. Everything stays on your computer.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "EdgeTranscript",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "options_page": "src/options/options.html",
+  "permissions": ["storage", "unlimitedStorage", "downloads", "tabs"],
+  "host_permissions": [
+    "https://meet.google.com/*",
+    "https://teams.microsoft.com/*",
+    "https://teams.live.com/*",
+    "https://teams.cloud.microsoft/*",
+    "https://*.zoom.us/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://meet.google.com/*",
+        "https://teams.microsoft.com/*",
+        "https://teams.live.com/*",
+        "https://teams.cloud.microsoft/*",
+        "https://*.zoom.us/wc/*",
+        "https://app.zoom.us/wc/*"
+      ],
+      "js": [
+        "src/lib/settings.js",
+        "src/lib/transcript-model.js",
+        "src/lib/storage.js",
+        "src/content/dom-utils.js",
+        "src/content/platforms/meet.js",
+        "src/content/platforms/teams.js",
+        "src/content/platforms/zoom.js",
+        "src/content/recorder.js",
+        "src/content/bootstrap.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

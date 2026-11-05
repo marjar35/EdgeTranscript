@@ -1,0 +1,11 @@
+{
+  "name": "edgetranscript",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Save live-caption transcripts from Google Meet, Teams and Zoom web calls.",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "icons": "node tools/make-icons.js",
+    "check": "node tools/check.js"
+  }
+}

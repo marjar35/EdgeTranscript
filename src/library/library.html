@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transcripts — EdgeTranscript</title>
+  <link rel="icon" href="../../icons/icon32.png">
+  <link rel="stylesheet" href="../lib/ui.css">
+  <link rel="stylesheet" href="library.css">
+</head>
+<body>
+  <header class="top">
+    <img src="../../icons/icon32.png" alt="" width="22" height="22">
+    <h1>Transcripts</h1>
+    <span class="spacer"></span>
+    <a class="btn" href="../options/options.html">Settings</a>
+  </header>
+
+  <div id="welcome" class="welcome" hidden>
+    <strong>EdgeTranscript is installed.</strong>
+    Join a Google Meet, Microsoft Teams or Zoom call in this browser and turn on the meeting's captions —
+    the transcript is recorded automatically and appears here. Everything is stored only on this computer.
+    Please let the other participants know you are keeping a transcript.
+    <button class="link" id="welcome-close">Got it</button>
+  </div>
+
+  <main>
+    <aside class="sidebar">
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search titles and text…" aria-label="Search">
+        <div class="filter-row">
+          <select id="platform" aria-label="Platform">
+            <option value="">All platforms</option>
+            <option value="meet">Google Meet</option>
+            <option value="teams">Microsoft Teams</option>
+            <option value="zoom">Zoom</option>
+          </select>
+          <input id="from" type="date" aria-label="From date" title="From">
+          <input id="to" type="date" aria-label="To date" title="To">
+        </div>
+      </div>
+      <div class="bulk">
+        <label><input type="checkbox" id="select-all"> <span id="count"></span></label>
+        <span class="spacer"></span>
+        <button id="bulk-export" disabled>Export</button>
+        <button id="bulk-delete" class="danger" disabled>Delete</button>
+      </div>
+      <ul id="list" class="list"></ul>
+    </aside>
+
+    <section id="viewer" class="viewer"></section>
+  </main>
+
+  <script src="../lib/settings.js"></script>
+  <script src="../lib/transcript-model.js"></script>
+  <script src="../lib/exporters.js"></script>
+  <script src="../lib/storage.js"></script>
+  <script src="../lib/ui.js"></script>
+  <script src="library.js"></script>
+</body>
+</html>
