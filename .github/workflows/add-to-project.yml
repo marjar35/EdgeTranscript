@@ -1,0 +1,16 @@
+name: Add issue/PR to Central project
+
+on:
+  issues:
+    types: [opened, reopened]
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v1.0.2
+        with:
+          project-url: https://github.com/users/marjar35/projects/5
+          github-token: ${{ secrets.PROJECT_TOKEN }}
