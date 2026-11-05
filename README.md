@@ -6,12 +6,11 @@ Spec and requirements: [docs/SPEC.md](docs/SPEC.md).
 
 ## Install (developer mode)
 
-1. Open `edge://extensions` (or `chrome://extensions`).
-2. Turn on **Developer mode**.
-3. **Load unpacked** → select this folder (`C:\Apps\EdgeTranscript`).
-4. Pin the extension to the toolbar. Reload any meeting tab that was already open.
-
-After editing code, press **Reload** on the extension card and reload the meeting tab.
+1. Download and unzip
+2. Open `edge://extensions` (or `chrome://extensions`).
+3. Turn on **Developer mode**.
+4. **Load unpacked** → select the folder (`Download?`).
+5. Optional: Review settings.
 
 ## Use
 
@@ -19,7 +18,7 @@ After editing code, press **Reload** on the extension card and reload the meetin
    - Google Meet — `meet.google.com`
    - Teams — `teams.microsoft.com` / `teams.live.com` / `teams.cloud.microsoft` (web, not the desktop app)
    - Zoom — web client `app.zoom.us/wc/...` ("Join from your browser")
-2. Turn on captions:
+2. Turn on **captions** (not the recording):
    - Meet: CC button or press `c` (ET tries this for you).
    - Teams: **More … → Language and speech → Show live captions**.
    - Zoom: **Captions → Show captions** (host must allow it). Open **View full transcript** to get speaker names.
