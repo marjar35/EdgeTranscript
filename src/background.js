@@ -42,8 +42,8 @@ async function updateBadge(tabId) {
     await chrome.action.setBadgeText({ tabId, text: b.text });
     await chrome.action.setBadgeBackgroundColor({ tabId, color: b.color });
     const title = s && s.status !== 'idle'
-      ? `ET — ${s.platformName}: ${s.status.replace('-', ' ')} (${s.lines} lines)`
-      : 'ET';
+      ? `ET. — ${s.platformName}: ${s.status.replace('-', ' ')} (${s.lines} lines)`
+      : 'ET.';
     await chrome.action.setTitle({ tabId, title });
   } catch (_) { /* tab gone */ }
 }
