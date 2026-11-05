@@ -15,7 +15,7 @@ After editing code, press **Reload** on the extension card and reload the meetin
 
 ## Use
 
-1. Join a call in the browser:
+1. Join a call in the **browser**:
    - Google Meet — `meet.google.com`
    - Teams — `teams.microsoft.com` / `teams.live.com` / `teams.cloud.microsoft` (web, not the desktop app)
    - Zoom — web client `app.zoom.us/wc/...` ("Join from your browser")
