@@ -1,4 +1,4 @@
-# ET.
+# Edge Transcript | ET.
 
 Browser extension (Edge / Chrome, Manifest V3) that saves transcripts of **Google Meet**, **Microsoft Teams** and **Zoom** web calls by reading the meeting's own live captions. No audio is recorded, nothing is sent anywhere — transcripts are stored in the browser's local extension storage.
 
